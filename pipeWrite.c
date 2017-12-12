@@ -10,5 +10,5 @@ int main(){
 	mkfifo("pipe", 0666);
 
 	int pipeFd = open("pipe", O_WRONLY);
-	write(pipeFd, msg, strlen(msg));
+	while(1)write(pipeFd, msg, strlen(msg));
 }
